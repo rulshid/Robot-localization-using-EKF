@@ -56,7 +56,22 @@ parameters are set by the guidelines based on the knowledge from :
 https://github.com/methylDragon/ros-sensor-fusion-tutorial/blob/master/01%20-%20ROS%20and%20Sensor%20Fusion%20Tutorial.md
 
 ## Performance analysis
-Please check : https://www.youtube.com/watch?v=IUcd2TAj12A
-The Output obtained from the current configuration for the extended kalman filter gave me good results. These results can be further improved by tuning the process_noise_covariance matrix.
+Please check: https://www.youtube.com/watch?v=IUcd2TAj12A
+The Output obtained from the current configuration for the extended Kalman filter gave me good results. These results can be further improved by tuning the process_noise_covariance matrix.
 Graphical representation of filterd pos(output from ekf- odometry/filtered ) and pos based on gnss (sensors/gnss/odom) 
 ![image](https://user-images.githubusercontent.com/40757610/130339649-cb5daf4e-969e-4402-8bb0-7d20d8fa24d3.png)
+
+Graphical representation of filterd pos(output from ekf- odometry/filtered ) and sensors/odom/ground_truth/pos
+![imagett4](https://user-images.githubusercontent.com/40757610/130340498-d6e66d96-2668-40b2-86e8-065f13b82b8a.png)
+
+
+## Work description
+ I have approached the task by running the rosbag file and checking data in each node.
+ Once I understood the data I have with me, Then I switched to research mode. 
+ I have spent almost 10 hr in reading and watching several videos related to localization, sensor fusion extended Kalman filter.
+ Then I came across this robot_localization package. almost spend 3-4 hr to understand the parameter configuration of the EKF node.
+ Then I have started hands-on experiments, created launch files and updated parameters.yaml file.
+ then compared the output(odometry/filtered) with odom/ground_truth data , and started visualizing the input,output,and reference (odom/ground_truth) data in Rviz .This has given me a better understanding of the concepts. Then I have created a final.launch file to make my testing easier. And I'm sure this can be further improved by testing and updating the process_noise_covariance matrix.
+ 
+ 
+ And thanks to Team Crover for This opportunity
