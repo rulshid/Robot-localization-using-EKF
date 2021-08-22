@@ -1,0 +1,14 @@
+<launch>
+  <node pkg="rosbag" type="play" name="rosbagplay" args="$(find ekf_test1)/bag_files/data.bag --clock -d 5" required="true"/>
+  <node pkg="rosbag" type="record" name="rosbagrecord" args="-O $(find ekf_test1)/bag_files/output.bag /odometry/filtered" required="true"/>
+  <node pkg="robot_localization" type="ekf_localization_node" name="ekf_node" clear_params="true">
+    <rosparam command="load" file="$(find ekf_test1)/params/ekf_parameters.yaml" />
+   <!--  Placeholder for output topic remapping
+    <remap from="odometry/filtered" to=""/>
+    <remap from="accel/filtered" to=""/>
+    -->
+  </node>
+
+   <node pkg="rviz" type="rviz" name="rviz" args="-d $(find ekf_test1)/rviz/rviz_config.rviz"/> 
+
+</launch>
