@@ -1,0 +1,2 @@
+ekf_test1
+-DCATKIN_DEVEL_PREFIX=/home/rulshid/Crover_task_ws/devel -DCMAKE_INSTALL_PREFIX=/home/rulshid/Crover_task_ws/install -G Unix Makefiles
