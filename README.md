@@ -20,7 +20,7 @@ $ sudo apt-get install ros-noetic-robot_localization.
 ```
 
 ```sh
-$ cd Crover_task_ws
+$ cd Ekf_test_ws
 ```
 Note : It is always better to remove build and devel folders before executing $ catkin_make
 ```sh
@@ -63,15 +63,3 @@ Graphical representation of filterd pos(output from ekf- odometry/filtered ) and
 
 Graphical representation of filterd pos(output from ekf- odometry/filtered ) and sensors/odom/ground_truth/pos
 ![imagett4](https://user-images.githubusercontent.com/40757610/130340498-d6e66d96-2668-40b2-86e8-065f13b82b8a.png)
-
-
-## Work description
- I have approached the task by running the rosbag file and checking data in each node.
- Once I understood the data I have with me, Then I switched to research mode. 
- I have spent almost 10 hr in reading and watching several videos related to localization, sensor fusion extended Kalman filter.
- Then I came across this robot_localization package. almost spend 3-4 hr to understand the parameter configuration of the EKF node.
- Then I have started hands-on experiments, created launch files and updated parameters.yaml file.
- then compared the output(odometry/filtered) with odom/ground_truth data , and started visualizing the input,output,and reference (odom/ground_truth) data in Rviz .This has given me a better understanding of the concepts. Then I have created a final.launch file to make my testing easier. And I'm sure this can be further improved by testing and updating the process_noise_covariance matrix.
- 
- 
- And thanks to Team Crover for This opportunity
