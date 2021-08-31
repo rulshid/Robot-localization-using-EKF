@@ -1,8 +1,0 @@
-prefix=/home/rulshid/Crover_task_ws/install
-
-Name: ekf_test1
-Description: Description of ekf_test1
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
